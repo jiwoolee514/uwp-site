@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=23">
 </head>
 <body>
   <header class="site-header">
@@ -22,66 +22,80 @@
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="container">
+    <section class="page-hero page-hero-tight">
+      <div class="container hero-left">
         <span class="eyebrow">Genre conventions</span>
-        <h1>Key features</h1>
-        <p class="lead">Pick up almost any pack in Korea and you'll find the same pieces in roughly the same places. Some are there because the law requires them. Others are there because they sell cigarettes.</p>
+        <h1>Key Features</h1>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <h2>Required by law</h2>
-        <p>These features come from Korea's National Health Promotion Act. Tobacco companies can't remove them or change how they look.</p>
-        <div class="grid">
-          <article class="card">
-            <div class="icon">1</div>
-            <h3>Graphic warning picture</h3>
-            <p>A photo of smoking damage, such as lung cancer, throat cancer, rotting teeth or a sick baby, printed at the top of the front and back. With the warning text, it covers about half of each side.</p>
-          </article>
-          <article class="card">
-            <div class="icon">2</div>
-            <h3>Warning text</h3>
-            <p>A short, direct Korean sentence that names the disease in the picture. The government rotates the set of pictures and messages every couple of years so people don't tune them out.</p>
-          </article>
-          <article class="card">
-            <div class="icon">3</div>
-            <h3>Side-panel information</h3>
-            <p>A list of harmful chemicals in the smoke (such as benzene, arsenic and cadmium), the quit-line number, and a notice that selling to anyone under 19 is illegal.</p>
-          </article>
+    <section class="section feature-box-section">
+      <div class="container feature-split">
+        <figure class="reveal reveal-cutout">
+          <img class="reveal-base" src="images/blank-cigarette-box-cutout.png" alt="Black-and-white photo of a Marlboro cigarette pack with its warning image, warning text and bottom text left blank. Hover over a part to reveal the original." width="1176" height="2093">
+          <img class="reveal-spot spot-box" src="images/original-cigarette-box-cutout.png" alt="The pack's original color design: a green and orange Marlboro box with a dark border around the warning" tabindex="0">
+          <img class="reveal-spot spot-graphic" src="images/original-cigarette-box-cutout.png" alt="Graphic warning photo: a baby being bottle-fed a bottle full of cigarette butts" tabindex="0">
+          <img class="reveal-spot spot-warning" src="images/original-cigarette-box-cutout.png" alt="Korean warning text: sale to minors under 19 prohibited; tobacco smoke contains carcinogens naphthylamine, nickel, benzene, vinyl chloride, arsenic and cadmium; quitline 1544-9030" tabindex="0">
+          <img class="reveal-spot spot-bottom" src="images/original-cigarette-box-cutout.png" alt="Original Korean text describing the pack's smell-control features" tabindex="0">
+        </figure>
+        <div class="feature-side">
+          <p class="feature-intro">Click different parts of the cigarette box to learn about its key features!</p>
+
+          <!-- Pop-up card: opens when a part of the box is clicked -->
+          <aside class="feature-popup" role="dialog" aria-labelledby="popup-title" aria-hidden="true">
+            <button class="popup-close" type="button" aria-label="Close">&times;</button>
+            <span class="eyebrow popup-eyebrow"></span>
+            <h2 id="popup-title" class="popup-title"></h2>
+            <div class="popup-body"></div>
+          </aside>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <h2>Created by the brand</h2>
-        <p>In the space left over, companies compete for attention and loyalty.</p>
-        <div class="grid">
-          <article class="card">
-            <div class="icon">Aa</div>
-            <h3>Brand name &amp; logo</h3>
-            <p>Usually in English or a European-sounding word (Esse, Raison, The One, Bohem) to feel modern, global or upscale.</p>
-          </article>
-          <article class="card">
-            <div class="icon">◐</div>
-            <h3>Color coding</h3>
-            <p>Misleading words like "light" or "mild" are banned, so brands use color instead. Pale blue, silver and white suggest "smoother", and bolder colors suggest "stronger".</p>
-          </article>
-          <article class="card">
-            <div class="icon">▯</div>
-            <h3>Shape &amp; finish</h3>
-            <p>Slim packs, metallic or soft-touch finishes, and menthol "capsule" cigarettes marked with a small icon make the pack feel like a fashion accessory.</p>
-          </article>
+        <h2>Scene and Situation: Convenience Store</h2>
+        <div class="scene">
+          <h3>Where you’ll find it</h3>
+          <p>In Korea, cigarettes are sold at convenience stores like CU, GS25, and 7-Eleven. You won’t see them on the shelves, though. They’re kept behind the counter, so you have to ask the cashier for a pack and show your ID. You have to be at least 19 to buy one.</p>
+
+          <h3>Where it ends up</h3>
+          <p>Once someone buys a pack, it usually goes into a pocket, bag, or car. Sometimes it’s left on a table in an outdoor smoking area. Smokers pull the box out throughout the day, which means they see the warning over and over.</p>
+
+          <h3>Who’s involved</h3>
+          <p>Two groups design every box. Korean health officials handle the warnings, and tobacco companies like Marlboro and KT&amp;G handle the branding. Adult smokers are the main audience, but they aren’t the only ones who see the box. Cashiers and other customers, including minors, can see the packs behind the counter, and the images get the point across even if you can’t read Korean.</p>
+
+          <h3>The situation</h3>
+          <p>In December 2016, Korea started requiring a full-color picture warning that covers at least half of the pack. Before that, warnings were text only and took up just 20% (Lee et al., 2020). And since everyone has to go up to the counter to pay, customers see the warnings whether they want to or not. Public messages usually depend on people choosing to pay attention, but here that choice is taken away (Screven, 1999). What you end up with is one box sending two opposite messages: the government wants you to quit, and the brand wants you to buy.</p>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="callout">
-          <strong>Why it matters:</strong> the genre is shaped by a power struggle. The law decides how much space the warning gets, and the brand gets whatever is left, so every design choice on the bottom half is trying to win attention back from the top.
+        <h2>Strategies &amp; Decisions When Working Within the Genre</h2>
+        <div class="scene">
+          <h3>The government’s side</h3>
+          <p>The Korean government picked images meant to scare people. The pictures show some of the worst things smoking can do, like a heart attack that needs open-heart surgery, or a baby being fed from a bottle full of cigarette butts. Lee et al. (2020) found that smokers who felt stronger negative emotions from these images were more motivated to quit, so the shock is on purpose. Companies have to use one of ten pictures the government provides, and the set changes every 24 months.</p>
+          <p>The government also adds information beneath the picture. Every pack lists the carcinogens in cigarette smoke and gives a hotline number for anyone who wants help quitting. Flavor names aren’t allowed either. The government doesn’t say exactly why, but research suggests flavor cues make cigarettes seem less harmful, especially to younger people (Heo et al., 2026).</p>
+
+          <h3>The tobacco companies’ side</h3>
+          <p>If you’re designing for a brand like Marlboro or KT&amp;G, you start with only half the front of the box, and you don’t get to choose what goes on the other half. That changes a lot of decisions.</p>
+          <p>Since they can’t name a flavor, companies hint at it instead. The Marlboro pack I looked at uses green and yellow with the name “garden splash,” which makes it feel fresh without saying what it tastes like. Other brands use words like “Blue” or “Ice.” KT&amp;G’s The One Orange 0.5 goes the other way, with a mostly white box and a soft orange circle that pulls your eye away from the surgery photo. The low tar number and simple layout also make it look cleaner and gentler.</p>
+          <p>Brands also promote features they’re still allowed to talk about. Marlboro advertises a scent capsule for “Smoke Smell Control” and backs it up with a survey from an outside research firm. Whatever they do with the design, though, they still have to include the warning image, the carcinogen list, the hotline number, and the warning against sales to minors, because the law requires all of it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Context</h2>
+        <div class="scene">
+          <h3>Why these decisions were made</h3>
+          <p>Korea's National Tobacco Control Center explains that warning labels help every smoker and don't cost the government anything. That's a big reason the country made them mandatory under the National Health Promotion Act and the Tobacco Business Act. These laws require companies to put a government-provided picture on half the front of every pack, along with a list of carcinogens and a quitline number. The government doesn't explain its ban on flavor names, but research suggests flavor cues make cigarettes seem less harmful, especially to young people (Heo et al., 2026). The tobacco companies are in a tough spot. They still have to sell a product while the law controls a large part of their packaging, so most of their design choices are ways of working around those rules.</p>
+
+          <h3>Do the warnings actually work?</h3>
+          <p>The research says it depends on how the warning makes someone feel. Lee et al. (2020) surveyed 246 Korean smokers before and after the 2016 picture warnings came out. The new labels didn't get people to quit right away. But smokers who had stronger negative reactions to the images, like fear or disgust, were more motivated to quit than those who didn't. Some smokers also became more aware of the risks after the change. Smokers take out their pack many times a day, so the warning gets a lot of chances to hit them that way. It may not stop someone from buying cigarettes immediately, but it can slowly push them toward quitting.</p>
         </div>
       </div>
     </section>
@@ -98,5 +112,140 @@
       <p>Jiwoo Lee · UWP 012 · FQ 2026 · Genre Guide</p>
     </div>
   </footer>
+
+  <script>
+    // Idle auto-tour (same as the home page): light up each part top to bottom
+    // until the visitor hovers, taps or tabs onto the box.
+    (function () {
+      var reveal = document.querySelector('.reveal');
+      if (!reveal) return;
+      var tour = ['.spot-graphic', '.spot-warning', '.spot-box', '.spot-bottom']
+        .map(function (s) { return reveal.querySelector(s); });
+      var step = 0, tourTimer = null, idleTimer = null;
+
+      function clear() { tour.forEach(function (el) { el.classList.remove('auto-on'); }); }
+      function tick() { clear(); tour[step].classList.add('auto-on'); step = (step + 1) % tour.length; }
+      function start() {
+        if (tourTimer) return;
+        step = 0; reveal.classList.add('touring'); tick();
+        tourTimer = setInterval(tick, 750);
+      }
+      function stop() {
+        clearInterval(tourTimer); tourTimer = null;
+        clearTimeout(idleTimer); idleTimer = null;
+        reveal.classList.remove('touring'); clear();
+      }
+      function resumeLater(ms) {
+        clearTimeout(idleTimer);
+        if (popupOpen) return; // the tour stays off while a pop-up is open
+        idleTimer = setTimeout(start, ms || 2500);
+      }
+
+      reveal.addEventListener('mouseenter', stop);
+      reveal.addEventListener('mouseleave', function () { resumeLater(); });
+      reveal.addEventListener('touchstart', function () { stop(); resumeLater(6000); }, { passive: true });
+      reveal.addEventListener('focusin', stop);
+      reveal.addEventListener('focusout', function () { resumeLater(); });
+
+      // ---- Pop-up card for each part of the box ----
+      // Fill in "body" for each part (plain HTML is fine).
+      var parts = {
+        graphic: {
+          eyebrow: 'Feature 1',
+          title: 'Visual Mode: Graphic Image',
+          body:
+            '<ul>' +
+              '<li>Covers 50% of the front of the box</li>' +
+              '<li>Is one of 10 government-provided pictures (black lungs, rotten teeth, a scarred neck, burnt groin areas, and more), and the set rotates every 24 months</li>' +
+              '<li>Is full color. It replaced the old text-only warnings, which covered just 20% of the pack before December 2016 (Lee et al., 2020)</li>' +
+              '<li>Shows worst-case consequences of smoking, such as open-heart surgery, sexual dysfunction, or harm to a baby from secondhand smoke</li>' +
+              '<li>Is designed to cause strong negative emotions. Smokers who felt more of them were more motivated to quit (Lee et al., 2020)</li>' +
+            '</ul>'
+        },
+        warning: {
+          eyebrow: 'Feature 2',
+          title: 'Linguistic Mode: Warnings',
+          body:
+            '<ul>' +
+              '<li>Sits directly below the graphic image</li>' +
+              '<li>Is written in Korean, on a bright background that stands out from the brand design</li>' +
+              '<li>States that sales to minors under 19 are prohibited</li>' +
+              '<li>Lists the carcinogens found in cigarette smoke</li>' +
+              '<li>Gives the smoking cessation hotline number (1544-9030)</li>' +
+              '<li>Is required by law under the National Health Promotion Act and Tobacco Business Act</li>' +
+              '<li>Backs up the image with facts and gives smokers a next step: calling the quitline</li>' +
+            '</ul>'
+        },
+        box: {
+          eyebrow: 'Feature 3',
+          title: 'Spatial & Visual Modes: Brand Design',
+          body:
+            '<ul>' +
+              '<li>Takes up the bottom half of the front, the part the government doesn’t control</li>' +
+              '<li>Uses bright green, yellow, and orange to suggest a fresh flavor without naming it, since flavor names are restricted (Heo et al., 2026)</li>' +
+              '<li>Shows the Marlboro logo so smokers can recognize and rebuy the brand</li>' +
+              '<li>Promotes the “Smoke Smell Control” scent capsule, which is said to manage cigarette odor</li>' +
+              '<li>Backs that claim in the fine print with a survey: over 70% of 200 adult smokers agreed</li>' +
+              '<li>Uses a minimal, vibrant design to make the product look fresh and appealing</li>' +
+              '<li>Works against the warning above it. The government’s half discourages smoking, while the brand’s half encourages buying</li>' +
+            '</ul>'
+        },
+        bottom: {
+          eyebrow: 'Feature 4',
+          title: 'Linguistic & Visual Modes: Feature Icons & Fine Print',
+          body:
+            '<ul>' +
+              '<li>Sits at the bottom of the box, below the Marlboro logo</li>' +
+              '<li>Shows four small icons with short Korean labels that explain the scent capsule’s features</li>' +
+              '<li>The fine print says the capsule can help manage cigarette odor</li>' +
+              '<li>Backs this with an outside research firm’s survey, as over 70% of 200 adult smokers agreed</li>' +
+              '<li>Is part of Marlboro’s branding, not the government’s warning</li>' +
+              '<li>Uses small, simple icons so the benefits are easy to see at a glance</li>' +
+              '<li>Gives smokers a reason to buy, which works against the warning on the top half</li>' +
+            '</ul>'
+        }
+      };
+      var popup = document.querySelector('.feature-popup');
+      var side = document.querySelector('.feature-side');
+      var popupOpen = false, activeSpot = null;
+
+      function openPopup(key, spot) {
+        var p = parts[key];
+        popup.querySelector('.popup-eyebrow').textContent = p.eyebrow;
+        popup.querySelector('.popup-title').textContent = p.title;
+        popup.querySelector('.popup-body').innerHTML = p.body;
+        if (activeSpot) activeSpot.classList.remove('is-active');
+        activeSpot = spot; spot.classList.add('is-active'); // keep that part in color
+        popupOpen = true;
+        stop();
+        side.classList.add('popup-open');
+        popup.setAttribute('aria-hidden', 'false');
+        // restart the pop animation when switching between parts
+        popup.classList.remove('is-open'); void popup.offsetWidth; popup.classList.add('is-open');
+      }
+
+      function closePopup() {
+        if (!popupOpen) return;
+        popupOpen = false;
+        popup.classList.remove('is-open');
+        side.classList.remove('popup-open');
+        popup.setAttribute('aria-hidden', 'true');
+        if (activeSpot) { activeSpot.classList.remove('is-active'); activeSpot.blur(); activeSpot = null; }
+        if (!reveal.matches(':hover')) resumeLater();
+      }
+
+      Object.keys(parts).forEach(function (key) {
+        var spot = reveal.querySelector('.spot-' + key);
+        spot.addEventListener('click', function () { openPopup(key, spot); });
+        spot.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPopup(key, spot); }
+        });
+      });
+      popup.querySelector('.popup-close').addEventListener('click', closePopup);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePopup(); });
+
+      start();
+    })();
+  </script>
 </body>
 </html>

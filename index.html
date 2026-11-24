@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=23">
 </head>
 <body>
   <header class="site-header">
@@ -30,12 +30,12 @@
           <p class="lead text-left">Picture a cigarette pack with bright colors, a sleek minimal layout, and a fresh-sounding name like "garden splash." Now picture half of its front covered by a photo of black lungs or open-heart surgery. In South Korea, every pack looks like this.</p>
         </div>
         <div class="reveal-wrap">
-        <figure class="reveal">
-          <img class="reveal-base" src="images/blank-cigarette-box.png" alt="Black-and-white photo of a Marlboro cigarette pack with its warning image, warning text and bottom text left blank. Hover over a blank area to reveal the original." width="1439" height="2402">
-          <img class="reveal-spot spot-box" src="images/original-cigarette-box.png" alt="The pack's original color design: a green and orange Marlboro box with a dark border around the warning" tabindex="0">
-          <img class="reveal-spot spot-graphic" src="images/original-cigarette-box.png" alt="Graphic warning photo: a baby being bottle-fed a bottle full of cigarette butts" tabindex="0">
-          <img class="reveal-spot spot-warning" src="images/original-cigarette-box.png" alt="Korean warning text: sale to minors under 19 prohibited; tobacco smoke contains carcinogens naphthylamine, nickel, benzene, vinyl chloride, arsenic and cadmium; quitline 1544-9030" tabindex="0">
-          <img class="reveal-spot spot-bottom" src="images/original-cigarette-box.png" alt="Original Korean text describing the pack's smell-control features" tabindex="0">
+        <figure class="reveal reveal-cutout home-box">
+          <img class="reveal-base" src="images/blank-cigarette-box-cutout.png" alt="Black-and-white photo of a Marlboro cigarette pack with its warning image, warning text and bottom text left blank. Hover over a blank area to reveal the original." width="1176" height="2093">
+          <img class="reveal-spot spot-box" src="images/original-cigarette-box-cutout.png" alt="The pack's original color design: a green and orange Marlboro box with a dark border around the warning" tabindex="0">
+          <img class="reveal-spot spot-graphic" src="images/original-cigarette-box-cutout.png" alt="Graphic warning photo: a baby being bottle-fed a bottle full of cigarette butts" tabindex="0">
+          <img class="reveal-spot spot-warning" src="images/original-cigarette-box-cutout.png" alt="Korean warning text: sale to minors under 19 prohibited; tobacco smoke contains carcinogens naphthylamine, nickel, benzene, vinyl chloride, arsenic and cadmium; quitline 1544-9030" tabindex="0">
+          <img class="reveal-spot spot-bottom" src="images/original-cigarette-box-cutout.png" alt="Original Korean text describing the pack's smell-control features" tabindex="0">
         </figure>
         <p class="reveal-hint">Hover over the box!</p>
         </div>
@@ -154,7 +154,7 @@
         later(function () {
           // Center of the graphic photo area (same Figma numbers as the CSS clip)
           var b = reveal.getBoundingClientRect();
-          moveTo(b.left + b.width * 0.5144, b.top + b.height * 0.2228);
+          moveTo(b.left + b.width * 0.4983, b.top + b.height * 0.1658);
         }, offscreen ? 550 : 120);
 
         later(function () { reveal.classList.add('is-forced'); }, offscreen ? 1450 : 1020);
