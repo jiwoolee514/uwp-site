@@ -2,15 +2,17 @@
 :root {
   --paper: #faf7f0;
   --surface: #ffffff;
-  --ink: #1f2a24;
+  --ink: #000000;
   --muted: #5b6660;
   --accent: #2f6b4f;
+  --heading: #1e4d36;
   --accent-soft: #e3efe8;
   --line: #e2ddd0;
   --radius: 14px;
   --max: 960px;
   --font-head: "Fraunces", Georgia, serif;
-  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-body: "Source Serif 4", Georgia, serif;
+  --font-sub: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -103,6 +105,14 @@ h1, h2, h3 {
   font-family: var(--font-head);
   line-height: 1.2;
   font-weight: 600;
+  color: var(--heading);
+}
+
+/* Subsection headings: Fraunces, same as page titles */
+h2, h3 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin-bottom: 16px; }
@@ -111,7 +121,7 @@ h3 { font-size: 1.2rem; margin-bottom: 8px; }
 
 .lead {
   font-size: 1.2rem;
-  color: var(--muted);
+  color: var(--ink);
   max-width: 640px;
 }
 
@@ -158,7 +168,7 @@ h3 { font-size: 1.2rem; margin-bottom: 8px; }
   margin-bottom: 14px;
 }
 
-.card p { color: var(--muted); font-size: 0.98rem; }
+.card p { color: var(--ink); font-size: 0.98rem; }
 
 /* Quick-facts list */
 .facts {
@@ -198,13 +208,176 @@ h3 { font-size: 1.2rem; margin-bottom: 8px; }
   margin-top: 48px;
   border-top: 1px solid var(--line);
   padding: 28px 0;
-  color: var(--muted);
+  color: var(--ink);
   font-size: 0.9rem;
+}
+
+/* ----- Centered layout ----- */
+main, .site-footer { text-align: center; }
+
+/* Top bar: name on the left, links on the right */
+.nav-links { flex-wrap: wrap; justify-content: flex-end; }
+
+.lead,
+.section > .container > p { margin-left: auto; margin-right: auto; }
+
+.card .icon { margin-left: auto; margin-right: auto; }
+
+.facts { max-width: 640px; margin-left: auto; margin-right: auto; }
+
+.callout {
+  border-left: none;
+  border-top: 4px solid var(--accent);
+  border-radius: var(--radius);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Section headings + paragraphs: span the full content width, text left-aligned,
+   lined up with the left edge of the opening section */
+.section > .container > h2,
+.section > .container > p {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+
+/* Even vertical rhythm: hero → section gap matches section → section gap (64px) */
+.page-hero { padding-bottom: 32px; }
+
+/* Left-aligned text inside a centered block */
+.text-left { text-align: left; }
+.narrow { max-width: 640px; margin-left: auto; margin-right: auto; }
+
+/* Hero block pinned to the left edge of the content area */
+.hero-left { text-align: left; }
+.hero-left .lead,
+.hero-left .narrow { margin-left: 0; }
+
+/* Hero with text on the left, image on the right */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 40px;
+}
+
+/* Hover-to-reveal photo: blank B&W pack, original fills in each blank area */
+.reveal {
+  position: relative;
+  height: 440px;
+  aspect-ratio: 1439 / 2402;
+  margin: 0;
+  cursor: pointer;
+}
+
+.reveal img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Each copy of the original is clipped to one blank area (Figma coordinates
+   on the 1439 x 2402 frame). The clip also limits where it can be hovered. */
+.reveal-spot {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  outline: none;
+}
+
+.reveal-spot:hover,
+.reveal-spot:focus { opacity: 1; } /* tap on phones, Tab key on keyboards */
+
+.spot-graphic { clip-path: inset(9.66% 13.13% 65.11% 15.98%); }  /* 230,232  1020x606 */
+.spot-warning { clip-path: inset(34.89% 13.13% 50.87% 15.98%); } /* 230,838  1020x342 */
+.spot-bottom  { clip-path: inset(85.18% 14.52% 6.49% 20.85%); }  /* 300,2046 930x200 */
+
+/* The rest of the box (grey brand area + black border): the pack's outline,
+   with the three blank areas cut out as holes so they keep their own hover. */
+.spot-box {
+  clip-path: polygon(evenodd,
+    12.23% 8.49%, 89.65% 7.99%, 92.15% 94.42%, 10.98% 94.75%, 12.23% 8.49%,
+    15.98% 9.66%, 15.98% 49.13%, 86.87% 49.13%, 86.87% 9.66%, 15.98% 9.66%, 12.23% 8.49%,
+    20.85% 85.18%, 20.85% 93.51%, 85.48% 93.51%, 85.48% 85.18%, 20.85% 85.18%, 12.23% 8.49%);
+}
+
+.reveal-hint {
+  margin-top: 12px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-align: center;
+  /* Glossy shine: a light band sweeps across the text now and then */
+  background: linear-gradient(110deg,
+    var(--accent) 0%, var(--accent) 42%,
+    #d9f7e6 50%,
+    var(--accent) 58%, var(--accent) 100%);
+  background-size: 250% 100%;
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hint-shine 6s ease-in-out infinite;
+}
+
+/* Slow sweep takes ~3.3s, then the text rests before the next shine */
+@keyframes hint-shine {
+  0%        { background-position: 100% 0; }
+  55%, 100% { background-position: 0 0; }
+}
+
+/* Clicking the intro text sends a pretend cursor to the graphic photo */
+.hero-text { cursor: pointer; }
+
+.reveal.is-forced .spot-graphic { opacity: 1; }
+
+/* Idle auto-tour highlights one part at a time */
+.reveal-spot.auto-on { opacity: 1; }
+
+/* During the tour, long overlapping crossfades so parts blend into each other */
+.reveal-spot { will-change: opacity; }
+.reveal.touring .reveal-spot {
+  transition: opacity 0.65s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.ghost-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0;
+  transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.2s ease;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.35));
+}
+
+.ghost-cursor.is-visible { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-hint { animation: none; }
+  .ghost-cursor { transition: opacity 0.2s ease; }
+}
+
+@media (hover: none) {
+  .reveal-hint { font-size: 0; }
+  .reveal-hint::before { content: "Tap the box!"; font-size: 1.15rem; }
+}
+
+@media (max-width: 760px) {
+  .hero-split { grid-template-columns: 1fr; gap: 24px; }
+  .reveal { height: 340px; margin: 0 auto; }
 }
 
 /* ----- Mobile ----- */
 @media (max-width: 600px) {
-  .nav { flex-direction: column; align-items: flex-start; padding: 12px 0; gap: 8px; }
+  .nav { flex-direction: column; padding: 12px 0; gap: 8px; }
+  .nav-links { justify-content: center; }
   .nav-links a { padding: 6px 12px; }
   .page-hero { padding: 40px 0 24px; }
 }
